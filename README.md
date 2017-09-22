@@ -20,6 +20,8 @@ In order to see the green padlock in the browser's address bar, the computer nee
 
 According to the platform you are running on, Root CA should be trusted.
 
+If you just want to test on command line using curl or OK with the warning messages on the browser, you do NOT need to trust the Root CA.
+
 ## Edit Host File
 
 As you can see the certificates are issues for `acme.com` domain and the Nginx site will be run under `foo.acme.com`. Therefore depending on your system add below entry to your hosts file.
@@ -43,9 +45,15 @@ docker run --rm -p 443:443 \
 
 ## Testing
 
-Open a web browser and navigate to the `https://foo.acme.com` page. You should see no errors and warnings like below.
+If you trusted the Root CA of `acme.com`, opening a web browser and navigating to the `https://foo.acme.com` page, you should see no errors and warnings. The page should look like below.
 
 ![nginx tls view](https://github.com/gokhansengun/nginx-tls/raw/master/images/site-green-padlock.png "Nginx TLS View")
+
+If you just want to see it with `curl`, use below command.
+
+```
+curl --cacert ./certs/acme.com.crt https://foo.acme.com
+```
 
 ## Note
 
