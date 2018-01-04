@@ -1,0 +1,14 @@
+{
+  "signing": {
+    "profiles": {
+      "CA": {
+        "usages": ["cert sign"],
+        "expiry": "8760h"
+      }
+    },
+    "default": {
+      "usages": ["digital signature"],
+      "expiry": "8760h"
+    }
+  }
+}

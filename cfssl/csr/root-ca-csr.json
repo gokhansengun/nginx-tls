@@ -1,0 +1,20 @@
+{
+  "CN": "Istanbul Coders Root CA",
+  "key": {
+    "algo": "rsa",
+    "size": 4096
+  },
+  "names": [
+    {
+      "C": "TR",
+      "ST": "Marmara",
+      "L": "Istanbul",
+      "O": "Coders",
+      "OU": "Coders of Istanbul"
+    }
+  ],
+  "ca": {
+    "expiry": "262800h"
+  }
+}
+
